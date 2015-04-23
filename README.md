@@ -1,2 +1,3 @@
-# locationSelector
-province and city selector
+#省市二级联动下拉菜单的简单实现
+
+可以直接拿来使用。
