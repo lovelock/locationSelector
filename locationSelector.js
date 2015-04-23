@@ -77,21 +77,20 @@ cityList['其他'] = ["其它地区"];
 //全国省会，直辖市，自治区名称
 var provinceList = ["北京市", "上海市", "天津市", "重庆市", "河北省", "山西省", "辽宁省", "吉林省", "河南省", "江苏省", "浙江省", "安徽省", "福建省", "江西省", "山东省", "湖北省", "湖南省", "广东省", "海南省", "四川省", "贵州省", "云南省", "陕西省", "甘肃省", "青海省", "黑龙江省", "内蒙古自治区", "广西壮族自治区", "西藏自治区", "宁夏回族自治区", "新疆维吾尔自治区", "台湾省", "香港特别行政区", "澳门特别行政区", "其它"];
 
-
 $.each(provinceList, function (key, value) {
-    $('#province')
+    $("#province")
         .append($("<option></option>")
-            .attr("value", value)
+            .val(value)
             .text(value));
 });
 
-
-
-function changeCity(provinceSelected) {
-    $.each(cityList[provinceSelected], function (key, value) {
-        $('#city')
-            .append($('<option></option>')
-                .attr('value', value)
+$('#province').change(function () {
+    $("#city").empty();
+    var city = $('#province').find('option:selected').val();
+    $.each(cityList[city], function (key, value) {
+        $("#city")
+            .append($("<option></option>")
+                .val(value)
                 .text(value));
     });
-}
+});

@@ -5,12 +5,14 @@
     <title>省市二级联动</title>
 </head>
 <body>
-<select id="province" onchange="changeCity($(this).find('option:selected').val())">
+<label for="province">省</label><select id="province">
+    <option value="">-----请选择省-----</option>
 </select>
-<select id="city">
+<label for="city">市</label><select id="city">
+    <option value="">-----请选择市-----</option>
 </select>
 <script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js">
 </script>
-<script type="text/javascript" src="province.js"></script>
+<script type="text/javascript" src="locationSelector.js"></script>
 </body>
 </html>
